@@ -1,25 +1,19 @@
-FROM ubuntu:trusty
+FROM ubuntu:bionic
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN \
   apt-get update && \
-  apt-get install -y language-pack-en-base && \
-  export LC_ALL=en_US.UTF-8 && \
-  export LANG=en_US.UTF-8 && \
-  apt-get install -y python-software-properties software-properties-common curl && \
-  add-apt-repository ppa:chris-lea/node.js && \
-  apt-get update && \
   apt-get install -y \
     nodejs \
+    npm \
     abiword \
-    wget \
+    curl \
     && \
-  apt-get remove -y python-software-properties software-properties-common && \
   apt-get autoremove -y && \
   rm -rf /var/lib/apt/lists/*
 RUN \
-  wget -c https://github.com/ether/etherpad-lite/archive/1.6.6.tar.gz && \
+  curl -L https://github.com/ether/etherpad-lite/archive/1.6.6.tar.gz --output 1.6.6.tar.gz && \
   tar xzf 1.6.6.tar.gz && \
   rm -vf 1.6.6.tar.gz && \
   mv etherpad-lite-1.6.6 /usr/share/schoolbox-epl && \
