@@ -19,7 +19,6 @@ services:
       - NODE_ENV=production
       - EDIT_ONLY=false
       - REQUIRE_SESSION=false
-
     ports:
       - 9001:9001
 
