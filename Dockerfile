@@ -8,7 +8,7 @@ ARG ETHERPAD_PLUGINS="redis ep_disableChat ep_disable_change_author_name ep_head
 ARG PKGS_TO_DEL="make gcc g++ linux-headers openssl" 
 ARG DIRS_TO_DEL="/var/cache/apk/*" 
 ARG PAD_BUILD_DEPENDENCY="openssl openssl-dev pcre pcre-dev zlib zlib-dev"
-ARG NODE_ENV=development
+ARG NODE_ENV=production
 ARG TITLE
 ARG ADMIN_PASSWORD
 ARG DEFAULT_PAD_TEXT
@@ -17,6 +17,7 @@ ARG SESSION_KEY
 # As for our use case, we are setting these values to true...
 ARG REQUIRE_SESSION=true
 ARG EDIT_ONLY=true
+ARG LOGLEVEL=ERROR
 
 ENV NODE_ENV=$NODE_ENV
 ENV TITLE=$TITLE
@@ -26,6 +27,7 @@ ENV API_KEY=$API_KEY
 ENV SESSION_KEY=$SESSION_KEY
 ENV REQUIRE_SESSION=$REQUIRE_SESSION
 ENV EDIT_ONLY=$EDIT_ONLY
+ENV LOGLEVEL=$LOGLEVEL
 
 # Install packages
 RUN apk add -U curl openssl
