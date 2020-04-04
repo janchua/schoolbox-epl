@@ -16,7 +16,6 @@ services:
       - DB_HOST=redis
       - DB_NAME=0
       - DB_PORT=6379
-      - NODE_ENV=production
       - EDIT_ONLY=false
       - REQUIRE_SESSION=false
     ports:
