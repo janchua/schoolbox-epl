@@ -1,6 +1,6 @@
 # Inspired by https://github.com/ether/etherpad-lite/blob/develop/Dockerfile
 FROM node:alpine3.11
-LABEL version="1.6.0"
+LABEL version="1.8.0"
 LABEL maintainer="IST Schoolbox <ist@schoolbox.com.au>"
 
 ARG ETHERPAD_VERSION=1.8.0
