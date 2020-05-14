@@ -1,0 +1,31 @@
+version: "3"
+
+services:
+  # Etherpad
+  etherpad:
+    build:
+      context: .
+    container_name: etherpad
+    restart: always
+    environment:
+      - API_KEY=${API_KEY}
+      - SESSION_KEY=${SESSION_KEY}
+      - TITLE=${TITLE}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - DB_TYPE=redis
+      - DB_HOST=redis
+      - DB_NAME=0
+      - DB_PORT=6379
+      - EDIT_ONLY=false
+      - REQUIRE_SESSION=false
+    ports:
+      - 9001:9001
+
+  # Redis
+  redis:
+    image: redis
+    container_name: redis
+    volumes:
+      - ./data/redis:/data
+    ports:
+      - 6379:6379
