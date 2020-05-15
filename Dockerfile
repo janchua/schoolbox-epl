@@ -4,7 +4,7 @@ LABEL version="1.8.0"
 LABEL maintainer="IST Schoolbox <ist@schoolbox.com.au>"
 
 ARG ETHERPAD_VERSION=1.8.0
-ARG ETHERPAD_PLUGINS="redis ep_disableChat ep_disable_change_author_name ep_headings"
+ARG ETHERPAD_PLUGINS="redis ep_disable_change_author_name ep_headings"
 ARG PKGS_TO_DEL="make gcc g++ linux-headers openssl" 
 ARG DIRS_TO_DEL="/var/cache/apk/*" 
 ARG PAD_BUILD_DEPENDENCY="openssl openssl-dev pcre pcre-dev zlib zlib-dev"

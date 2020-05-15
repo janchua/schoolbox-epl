@@ -47,7 +47,6 @@ Once successful, you should be able to access http://localhost:9001
 ## Installed plugins
 
 - redis
-- ep_disableChat
 - ep_disable_change_author_name
 - ep_headings
 
