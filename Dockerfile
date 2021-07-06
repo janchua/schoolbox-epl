@@ -6,7 +6,7 @@ ARG ETHERPAD_VERSION=1.8.14
 # Should align with what's defined in etherpad lite's repo
 # https://github.com/ether/etherpad-lite/blob/bb3bb2c12a698878d2aef3e7423f6bda6a3db285/src/package-lock.json#L4043
 ARG NPM_VERSION=6.14.13
-ARG ETHERPAD_PLUGINS="redis ep_disableChat ep_disable_change_author_name ep_headings"
+ARG ETHERPAD_PLUGINS="redis ep_disable_chat ep_disable_change_author_name ep_headings"
 ARG PKGS_TO_DEL="make gcc g++ linux-headers openssl"
 ARG DIRS_TO_DEL="/var/cache/apk/*"
 ARG PAD_BUILD_DEPENDENCY="openssl openssl-dev pcre pcre-dev zlib zlib-dev"
@@ -17,6 +17,7 @@ ARG SESSION_KEY
 ARG REQUIRE_SESSION=true
 ARG EDIT_ONLY=true
 ARG LOGLEVEL="ERROR"
+ARG PAD_OPTIONS_SHOW_CHAT=false
 
 ENV NODE_ENV=$NODE_ENV
 ENV API_KEY=$API_KEY
